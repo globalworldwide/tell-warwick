@@ -1,0 +1,35 @@
+name: tell-warwick
+description: Notifies warwick of a build status
+inputs:
+  topic-arn:
+    description: Topic ARN to publish to
+    required: true
+  job-status:
+    description: Set to job.status
+    required: true
+  label1:
+    description: Build label
+  label2:
+    description: Build label
+  label3:
+    description: Build label
+  label4:
+    description: Build label
+  label5:
+    description: Build label
+  label6:
+    description: Build label
+  label7:
+    description: Build label
+  label8:
+    description: Build label
+  label9:
+    description: Build label
+  label10:
+    description: Build label
+runs:
+  using: node16
+  main: ./dist/index.js
+branding:
+  icon: thermometer
+  color: blue
