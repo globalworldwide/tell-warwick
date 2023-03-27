@@ -12,11 +12,11 @@ async function main() {
   const labels: Record<string, string> = {}
   for (let i = 1; i <= 10; ++i) {
     const label = getInput(`label${i}`, { required: false })
-    let [name, key] = label.split('=') as [string, string | undefined]
-    name = name.trim()
-    key = key?.trim() ?? ''
-    if (name && key) {
-      labels[name] = key
+    let [key, ...values] = label.split('=') as [string, string | undefined]
+    key = key.trim()
+    const value = values.join('=').trim()
+    if (key && value) {
+      labels[key] = value
     }
   }
 

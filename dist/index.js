@@ -30203,11 +30203,11 @@ async function main() {
     const labels = {};
     for (let i = 1; i <= 10; ++i) {
         const label = (0, core_1.getInput)(`label${i}`, { required: false });
-        let [name, key] = label.split('=');
-        name = name.trim();
-        key = key?.trim() ?? '';
-        if (name && key) {
-            labels[name] = key;
+        let [key, ...values] = label.split('=');
+        key = key.trim();
+        const value = values.join('=').trim();
+        if (key && value) {
+            labels[key] = value;
         }
     }
     const status = (0, core_1.getInput)('job-status', { required: true });
